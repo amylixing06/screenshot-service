@@ -15,13 +15,24 @@ app.post('/screenshot', async (req, res) => {
         }
 
         const browser = await puppeteer.launch({
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
+            args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-accelerated-2d-canvas',
+                '--disable-gpu',
+                '--headless'
+            ],
+            executablePath: process.env.CHROME_BIN || null
         });
         
         const page = await browser.newPage();
         await page.setViewport({ width: parseInt(width), height: parseInt(height) });
         
-        await page.goto(url, { waitUntil: 'networkidle0' });
+        await page.goto(url, { 
+            waitUntil: 'networkidle0',
+            timeout: 30000 
+        });
         
         const screenshot = await page.screenshot({
             type: 'png',
