@@ -32,7 +32,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV CHROME_BIN=/usr/bin/google-chrome
 
 # 暴露端口
-EXPOSE 3000
+EXPOSE 8080
 
 # 启动服务
 CMD ["npm", "start"] 
