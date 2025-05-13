@@ -1,4 +1,4 @@
-FROM node:22-slim
+FROM node:20-slim
 
 # 安装 Chrome 依赖
 RUN apt-get update && apt-get install -y \

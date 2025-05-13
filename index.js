@@ -4,6 +4,7 @@ const puppeteer = require('puppeteer');
 const app = express();
 const port = process.env.PORT || 8080;
 
+console.log('Node.js 服务已启动');
 console.log('服务启动中，端口：', process.env.PORT || 8080);
 
 app.use(express.json());
