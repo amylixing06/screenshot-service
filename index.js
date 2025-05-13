@@ -4,6 +4,8 @@ const puppeteer = require('puppeteer');
 const app = express();
 const port = process.env.PORT || 8080;
 
+console.log('服务启动中，端口：', process.env.PORT || 8080);
+
 app.use(express.json());
 
 app.post('/screenshot', async (req, res) => {

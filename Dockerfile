@@ -27,10 +27,6 @@ RUN npm install
 # 复制源代码
 COPY . .
 
-# 设置环境变量
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-ENV CHROME_BIN=/usr/bin/google-chrome
-
 # 暴露端口
 EXPOSE 8080
 
