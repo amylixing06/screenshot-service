@@ -50,7 +50,7 @@ app.post('/screenshot', async (req, res) => {
         res.send(screenshot);
     } catch (error) {
         console.error('Screenshot error:', error);
-        res.status(500).json({ error: 'Failed to capture screenshot' });
+        res.status(500).json({ error: 'Failed to capture screenshot', detail: error.message });
     }
 });
 
