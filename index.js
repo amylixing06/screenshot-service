@@ -1,5 +1,6 @@
 const express = require('express');
 const puppeteer = require('puppeteer');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 80;
@@ -8,6 +9,7 @@ console.log('Node.js 服务已启动');
 console.log('服务启动中，端口：', process.env.PORT || 80);
 
 app.use(express.json());
+app.use(cors());
 
 app.post('/screenshot', async (req, res) => {
     try {
