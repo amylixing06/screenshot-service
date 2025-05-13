@@ -2,10 +2,10 @@ const express = require('express');
 const puppeteer = require('puppeteer');
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
 
 console.log('Node.js 服务已启动');
-console.log('服务启动中，端口：', process.env.PORT || 8080);
+console.log('服务启动中，端口：', process.env.PORT || 80);
 
 app.use(express.json());
 
@@ -56,6 +56,6 @@ app.get('/health', (req, res) => {
     res.json({ status: 'ok' });
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Screenshot service is running on port ${port}`);
 }); 
